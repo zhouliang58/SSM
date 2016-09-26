@@ -60,8 +60,8 @@
 	    	<div id="menu" class="easyui-accordion" data-options="fit:true">   
     			<div title="基本操作">   
         			<ul>
-						<li><a href="#" title="category/query.html">类别管理</a>
-						<li><a href="#" title="product/query.html">商品管理</a>
+						<li><a href="#" title="category/toquery.html">类别管理</a>
+						<li><a href="#" title="index.html">商品管理</a>
 					</ul>
     			</div>   
     			<div title="销售管理">

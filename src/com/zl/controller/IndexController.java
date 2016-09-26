@@ -30,4 +30,13 @@ public class IndexController {
 		model.addAttribute("user", user);
 		return "index";
 	}
+	
+	/**
+	 * @Description 请求后台管理主页
+	 * @return
+	 */
+	@RequestMapping("/aindex")
+	public String aindex() throws Exception {
+		return "admin/aindex";
+	}
 }
