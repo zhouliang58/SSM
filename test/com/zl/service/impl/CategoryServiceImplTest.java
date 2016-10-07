@@ -21,7 +21,12 @@ public class CategoryServiceImplTest {
       
     @Test 
     public void getAllCategoryCustom() {  
-    	List<CategoryCustom> result = categoryService.getAllCategoryCustom();
+    	List<CategoryCustom> result = categoryService.getAllCategoryCustom(" ");
         System.out.println(result.size());  
     }  
+    
+    @Test 
+    public void deleteByIds() {  
+    	categoryService.deleteByIds("24,25");
+    } 
 }  

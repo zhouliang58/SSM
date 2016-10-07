@@ -37,6 +37,6 @@ public class IndexController {
 	 */
 	@RequestMapping("/aindex")
 	public String aindex() throws Exception {
-		return "admin/aindex";
+		return "main/aindex";
 	}
 }

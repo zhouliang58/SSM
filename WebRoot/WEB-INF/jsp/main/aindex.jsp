@@ -61,7 +61,7 @@
     			<div title="基本操作">   
         			<ul>
 						<li><a href="#" title="category/toquery.html">类别管理</a>
-						<li><a href="#" title="index.html">商品管理</a>
+						<li><a href="#" title="product/toquery.html">商品管理</a>
 					</ul>
     			</div>   
     			<div title="销售管理">

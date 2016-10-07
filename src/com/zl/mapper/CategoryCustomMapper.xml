@@ -16,8 +16,19 @@
     
   </resultMap>
   
-  <select id="getAllCategoryCustom"  resultMap="CategoryCustom" >
+  <select id="getAllCategoryCustom"  resultMap="CategoryCustom" parameterType="string">
+  
 	SELECT c.*,a.id account_id,a.login,a.name,a.pass  FROM category c LEFT JOIN account a  ON c.aid=a.id
+	<if test="_parameter != null ">
+			where type=#{type}
+	</if>
   </select>
+  
+  <delete id="deleteByIds" parameterType="string">
+  	delete from category where 
+  	<if test="_parameter != null">
+		id in (${_parameter}) 
+  	</if>
+  </delete>
 
 </mapper>

@@ -10,5 +10,9 @@ import com.zl.entity.CategoryCustom;
  *
  */
 public interface CategoryCustomMapper {
-	public List<CategoryCustom> getAllCategoryCustom();
+    //查询类别信息，级联管理员  
+	public List<CategoryCustom> getAllCategoryCustom(String type);
+	
+    //根据ids删除多条记录  
+    public void deleteByIds(String ids); 
 }

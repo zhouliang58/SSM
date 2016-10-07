@@ -17,6 +17,10 @@
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
 
+	<listener >
+		<listener-class>com.zl.listener.InitDataListener</listener-class>
+	</listener>
+	
 	<!-- 添加springmvc支持 -->
 	<servlet>
 		<servlet-name>springMVC</servlet-name>
