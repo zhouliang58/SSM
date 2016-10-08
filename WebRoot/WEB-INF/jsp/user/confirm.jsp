@@ -6,10 +6,10 @@
 	  <% response.setHeader("cache-control", "no-store"); %>	
   </head>
   <body>
-  	 <c:if test="${empty sessionScope.forder.sorders }">
+    	 <c:if test="${empty sessionScope.forderCustom.sorders }">
   	 	<!-- 如果购物车中的购物项为空，则跳转到首页 -->
   	 	<c:redirect url="/index.jsp"/>
-  	 </c:if>
+  	 </c:if> 
   	 <div class="wrapper">
         <div class="header">
             <div class="header_container">
@@ -19,7 +19,7 @@
                     <div class="welcom fl">欢迎光临LEISUPET SHOP!</div>
                     <ul class="top_links fr">
                         <li>
-                            <a href="${shop}/index.jsp">首页</a>
+                            <a href="${pageContext.request.contextPath}/index.jsp">首页</a>
                         </li>
                         <li>
                             <a href="#">我的账户</a>
@@ -35,7 +35,7 @@
                     <!-- logo -->
                     <h1 class="logo clear fl">
                         <a href="index.html">
-                            <img src="images/logo.png" />
+                            <img src="${pageContext.request.contextPath}/images/logo.png" />
                         </a>
                     </h1>
                     <!-- 小购物车 -->
@@ -219,11 +219,11 @@
 							<th class="align_center" width="20%">数量</th>
 							<th class="align_center" width="15%">小计</th>
 						</tr>
-						<c:forEach items="${sessionScope.forder.sorders}" var="sorder" varStatus="num">
+						<c:forEach items="${sessionScope.forderCustom.sorders}" var="sorder" varStatus="num">
 						<tr lang="${sorder.product.id}">
 							<td class="align_center"><a href="#" class="edit">${num.count}</a>
 							</td>
-							<td width="80px"><img src="${shop}/files/${sorder.product.pic}" width="80"
+							<td width="80px"><img src="/file/${sorder.product.pic}" width="80"
 								height="80" />
 							</td>
 							<td class="align_left"><a class="pr_name" href="#">${sorder.name}</a>
@@ -243,7 +243,7 @@
                    
                 </div>
                 <!-- 订购人确认 -->
-                <form action="${shop}/forder_save.action" method="post">
+                <form action="${pageContext.request.contextPath}/forder/save.html" method="post">
 	                <div class="person-check check">
 	                    <h1>订购人信息</h1>
 	                    <div class="person-checkinner">

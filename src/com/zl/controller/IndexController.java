@@ -1,6 +1,11 @@
 package com.zl.controller;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,12 +30,15 @@ public class IndexController {
 	 * @return
 	 */
 	@RequestMapping("/index")
-	public String index(Model model) throws Exception {
-		User user = userService.getUserById(1);
-		model.addAttribute("user", user);
-		return "index";
+	public void index(HttpServletRequest request,HttpServletResponse response){
+		try {
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
 	/**
 	 * @Description 请求后台管理主页
 	 * @return

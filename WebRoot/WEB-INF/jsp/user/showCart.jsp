@@ -190,7 +190,7 @@
 						</tbody>
 					</table>
 					<div class="action_buttonbar">
-						<font><a href="${pageContext.request.contextPath}/user/confirm.jsp">
+						<font><a href="${pageContext.request.contextPath}/user/toconfirm.html">
 							<button type="button" title="" class="checkout fr" style="background-color: #f38256;">
 									订单确认
 							</button>

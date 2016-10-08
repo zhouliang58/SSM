@@ -1,17 +1,24 @@
 package com.zl.service.impl;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 import com.zl.entity.ForderCustom;
 import com.zl.entity.Product;
 import com.zl.entity.Sorder;
 import com.zl.entity.SorderCustom;
+import com.zl.mapper.SorderMapper;
 import com.zl.service.SorderService;
 
 @Service("sorderService")
 public class SorderServiceImpl implements SorderService{
 
-
+	@Resource
+	private SorderMapper sorderMapper;
+	
 	@Override
 	public ForderCustom addSorder(ForderCustom forderCustom, Product product) {
         boolean isHave = false; //用来标记有没有重复购物项  
@@ -52,6 +59,13 @@ public class SorderServiceImpl implements SorderService{
 			}
 		}
 		return forderCustom;
+	}
+
+	@Override
+	public void saveSorders(List<Sorder> sorders) {
+		for (Sorder sorder : sorders) {
+			sorderMapper.insertSelective(sorder);
+		}
 	}
 
 }

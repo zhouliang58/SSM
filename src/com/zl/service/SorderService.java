@@ -1,7 +1,10 @@
 package com.zl.service;
 
+import java.util.List;
+
 import com.zl.entity.ForderCustom;
 import com.zl.entity.Product;
+import com.zl.entity.Sorder;
 import com.zl.entity.SorderCustom;
 
 public interface SorderService {
@@ -11,4 +14,6 @@ public interface SorderService {
     public SorderCustom productToSorder(Product product);  
     
     public ForderCustom updateSorder(Integer id , Integer number, ForderCustom forderCustom);
+    
+    public void saveSorders(List<Sorder> sorders);
 }
